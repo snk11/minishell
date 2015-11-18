@@ -1,22 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.c                                        :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/10/14 23:37:07 by syusof            #+#    #+#             */
-/*   Updated: 2015/11/18 04:29:18 by syusof           ###   ########.fr       */
+/*   Created: 2014/11/04 16:25:31 by syusof            #+#    #+#             */
+/*   Updated: 2014/11/12 00:14:49 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "minishell.h"
+#include "libft.h"
 
-
-
-# include <stdio.h>
-
-int		main(int ac,char **av,char ** env)
+char	*ft_strncpy(char *dest, const char *src, size_t n)
 {
-	printf("%s",env[0]);
+	size_t i;
+
+	if (src == NULL)
+		return (NULL);
+	i = 0;
+	while (src[i] && i < n)
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	while (i < n)
+	{
+		dest[i] = '\0';
+		i++;
+	}
+	return (dest);
 }

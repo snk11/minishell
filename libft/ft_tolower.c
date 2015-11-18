@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.c                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/10/14 23:37:07 by syusof            #+#    #+#             */
-/*   Updated: 2015/11/18 04:29:18 by syusof           ###   ########.fr       */
+/*   Created: 2014/11/05 20:08:53 by syusof            #+#    #+#             */
+/*   Updated: 2014/11/05 20:11:15 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "minishell.h"
+#include "libft.h"
 
-
-
-# include <stdio.h>
-
-int		main(int ac,char **av,char ** env)
+int		ft_tolower(int c)
 {
-	printf("%s",env[0]);
+	if (c >= 'A' && c <= 'Z')
+		return (c + 32);
+	return (c);
 }

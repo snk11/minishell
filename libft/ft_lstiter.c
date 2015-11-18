@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/10/14 23:37:07 by syusof            #+#    #+#             */
-/*   Updated: 2015/11/18 04:29:18 by syusof           ###   ########.fr       */
+/*   Created: 2014/11/13 06:06:09 by syusof            #+#    #+#             */
+/*   Updated: 2014/11/19 00:37:51 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "minishell.h"
+#include "libft.h"
 
-
-
-# include <stdio.h>
-
-int		main(int ac,char **av,char ** env)
+void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
-	printf("%s",env[0]);
+	while (lst && f)
+	{
+		f(lst);
+		lst = lst->next;
+	}
 }

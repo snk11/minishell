@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/10/14 23:37:07 by syusof            #+#    #+#             */
-/*   Updated: 2015/11/18 04:29:18 by syusof           ###   ########.fr       */
+/*   Created: 2014/11/04 22:28:45 by syusof            #+#    #+#             */
+/*   Updated: 2014/11/12 00:13:47 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "minishell.h"
+#include "libft.h"
 
-
-
-# include <stdio.h>
-
-int		main(int ac,char **av,char ** env)
+int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	printf("%s",env[0]);
+	if (n == 0)
+		return (0);
+	if (!(*s1 && *s2 && (unsigned char)*s1 == (unsigned char)*s2))
+		return ((unsigned char)*s1 - (unsigned char)*s2);
+	return (ft_strncmp(s1 + 1, s2 + 1, n - 1));
 }

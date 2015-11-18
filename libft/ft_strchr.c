@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/10/14 23:37:07 by syusof            #+#    #+#             */
-/*   Updated: 2015/11/18 04:29:18 by syusof           ###   ########.fr       */
+/*   Created: 2014/11/04 18:34:48 by syusof            #+#    #+#             */
+/*   Updated: 2014/11/11 02:09:16 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "minishell.h"
+#include "libft.h"
 
-
-
-# include <stdio.h>
-
-int		main(int ac,char **av,char ** env)
+char	*ft_strchr(const char *s, int c)
 {
-	printf("%s",env[0]);
+	int		i;
+
+	i = 0;
+	if (c == 0)
+		return ((char*)&s[ft_strlen(s)]);
+	while (s[i])
+	{
+		if (s[i] == (char)c)
+			return ((char*)&s[i]);
+		i++;
+	}
+	return (NULL);
 }

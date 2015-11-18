@@ -1,22 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.c                                        :+:      :+:    :+:   */
+/*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/10/14 23:37:07 by syusof            #+#    #+#             */
-/*   Updated: 2015/11/18 04:29:18 by syusof           ###   ########.fr       */
+/*   Created: 2014/11/06 10:32:07 by syusof            #+#    #+#             */
+/*   Updated: 2014/11/19 00:00:37 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "minishell.h"
+#include "libft.h"
 
-
-
-# include <stdio.h>
-
-int		main(int ac,char **av,char ** env)
+char	*ft_strmap(char const *s, char (*f)(char))
 {
-	printf("%s",env[0]);
+	int		i;
+	char	*str;
+
+	if ((str = ft_strnew(ft_strlen(s) + 1)))
+	{
+		i = 0;
+		while (s && s[i] && f)
+		{
+			str[i] = f(s[i]);
+			i++;
+		}
+		return (str);
+	}
+	return (NULL);
 }

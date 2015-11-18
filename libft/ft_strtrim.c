@@ -1,22 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/10/14 23:37:07 by syusof            #+#    #+#             */
-/*   Updated: 2015/11/18 04:29:18 by syusof           ###   ########.fr       */
+/*   Created: 2014/11/06 12:28:22 by syusof            #+#    #+#             */
+/*   Updated: 2014/11/12 00:20:12 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "minishell.h"
+#include "libft.h"
 
-
-
-# include <stdio.h>
-
-int		main(int ac,char **av,char ** env)
+char	*ft_strtrim(char const *s)
 {
-	printf("%s",env[0]);
+	int		n;
+
+	if (s == NULL)
+		return (NULL);
+	while (*s && (*s == ' ' || *s == '\n' || *s == '\t'
+				|| *s == '\v' || *s == '\r' || *s == '\f'))
+	{
+		s++;
+	}
+	n = ft_strlen(s) - 1;
+	while (s[n] && n > 0 && (s[n] == ' ' || s[n] == '\n' || s[n] == '\t'
+				|| s[n] == '\v' || s[n] == '\r' || s[n] == '\f'))
+	{
+		n--;
+	}
+	return (ft_strsub(s, 0, n + 1));
 }

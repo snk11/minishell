@@ -1,22 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.c                                        :+:      :+:    :+:   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/10/14 23:37:07 by syusof            #+#    #+#             */
-/*   Updated: 2015/11/18 04:29:18 by syusof           ###   ########.fr       */
+/*   Created: 2014/11/05 15:03:37 by syusof            #+#    #+#             */
+/*   Updated: 2014/11/12 00:15:43 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "minishell.h"
+#include "libft.h"
 
-
-
-# include <stdio.h>
-
-int		main(int ac,char **av,char ** env)
+char	*ft_strnew(size_t size)
 {
-	printf("%s",env[0]);
+	char		*str;
+	size_t		i;
+
+	if ((str = (char*)malloc(sizeof(char) * size + 1)))
+	{
+		i = 0;
+		while (i < size + 1)
+		{
+			str[i] = '\0';
+			i++;
+		}
+		return (str);
+	}
+	return (NULL);
 }

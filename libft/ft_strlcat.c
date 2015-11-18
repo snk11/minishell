@@ -1,22 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/10/14 23:37:07 by syusof            #+#    #+#             */
-/*   Updated: 2015/11/18 04:29:18 by syusof           ###   ########.fr       */
+/*   Created: 2014/11/04 17:18:46 by syusof            #+#    #+#             */
+/*   Updated: 2014/11/19 02:50:16 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "minishell.h"
+#include "libft.h"
 
-
-
-# include <stdio.h>
-
-int		main(int ac,char **av,char ** env)
+size_t ft_strlcat(char *dst, const char *src, size_t size)
 {
-	printf("%s",env[0]);
+	size_t		d;
+	size_t		lendst;
+	size_t		lensrc;
+
+	if (dst && src)
+	{
+		lendst = ft_strlen(dst);
+		lensrc = ft_strlen(src);
+		if (size <= lendst)
+			return (lensrc + size);
+		else
+		{
+			d = size - lendst - 1;
+			ft_strncat(dst, src, d);
+			return (lendst + lensrc);
+		}
+	}
+	return (0);
 }
