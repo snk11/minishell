@@ -6,13 +6,14 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/14 23:38:05 by syusof            #+#    #+#             */
-/*   Updated: 2015/10/14 23:40:24 by syusof           ###   ########.fr       */
+/*   Updated: 2015/11/18 23:24:49 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # ifndef MINISHELL_H
 # define MINISHELL_H
 
-
+# include "libft/libft.h"
+# include <unistd.h>
 
 # endif
