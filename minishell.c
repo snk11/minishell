@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/14 23:37:07 by syusof            #+#    #+#             */
-/*   Updated: 2015/11/18 23:33:15 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/17 15:54:10 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ int		main(int ac,char **av,char ** env)
 		stmp = ft_strjoin(tab[i],"/");
 		stmp = ft_strjoin(stmp,"ls");
 		printf("%s\n",stmp);
-		execve(stmp,av,env);
+//		execve(stmp,av,env);
+		execve("/bin/ls",av,env);
 		i++;
 	}
 	return (0);
