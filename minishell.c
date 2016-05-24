@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/14 23:37:07 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/17 16:44:20 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/24 15:49:13 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,10 @@ int		main(int ac,char **av,char ** env)
 		i++;
 	printf("%s\n",env[0]);
 	tab = (char**)malloc(sizeof(char*)*i+1);
+
 	tab[i] = NULL;
 	tab[0] = (char*)malloc(sizeof(char) * ft_strlen(env[0]));
-	i = 0;
-	while (env[0][i])
-	{
-		tab[0][i] = env[0][i];
-		i++;
-	}
+	ft_memmove(tab[0],env[0],ft_strlen(env[0]));
 	printf("%s\n",tab[0]);
 //	tab = ft_strsplit(env[0],':');
 //	tab[0] = ft_strrchr(tab[0],'=');
