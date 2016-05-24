@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/14 23:37:07 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/24 15:49:13 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/24 16:50:40 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ int		main(int ac,char **av,char ** env)
 	tab = NULL;
 	stmp = NULL;
 	i = 0;
+	if(av[1] && ft_strcmp(av[1],"exit") == 0)
+		exit(3);
 	while (env[i])
 		i++;
 	printf("%s\n",env[0]);
