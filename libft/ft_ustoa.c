@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_ustoa.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
+/*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/06 18:13:11 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/08 10:44:54 by syusof           ###   ########.fr       */
+/*   Created: 2016/06/14 07:42:27 by syusof            #+#    #+#             */
+/*   Updated: 2017/02/08 11:04:56 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,6 @@ static int		ft_countdigit(int n)
 	return (i);
 }
 
-static void		itoa_neg(char *str, int n, int i)
-{
-	while (i > 0)
-	{
-		str[1 + i - 1] = n % 10 + '0';
-		n = n / 10;
-		i--;
-	}
-	str[0] = '-';
-}
-
 static void		itoa_pos(char *str, int n, int i)
 {
 	while (i > 0)
@@ -46,29 +35,13 @@ static void		itoa_pos(char *str, int n, int i)
 	}
 }
 
-char			*ft_itoa(int n)
+char			*ft_ustoa(unsigned short n)
 {
 	char	*str;
 	int		i;
 
-	if (n == INT_MIN)
-	{
-		str = ft_strnew(11 + 1);
-		str = ft_strcpy(str, "-2147483648");
-		return (str);
-	}
-	if (n < 0 && n != INT_MIN)
-	{
-		n = -n;
-		i = ft_countdigit(n);
-		str = ft_strnew(1 + i + 1);
-		itoa_neg(str, n, i);
-	}
-	else
-	{
-		i = ft_countdigit(n);
-		str = ft_strnew(i + 1);
-		itoa_pos(str, n, i);
-	}
+	i = ft_countdigit((int)n);
+	str = ft_strnew(i + 1);
+	itoa_pos(str, (int)n, i);
 	return (str);
 }

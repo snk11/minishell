@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/04 22:28:45 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/30 15:45:28 by syusof           ###   ########.fr       */
+/*   Created: 2014/11/13 05:58:47 by syusof            #+#    #+#             */
+/*   Updated: 2016/10/06 13:48:40 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strncmp(const char *s1, const char *s2, size_t n)
+void	ft_lstadd(t_list **alst, t_list *new1)
 {
-	if (n == 0)
-		return (0);
-	if (!(*s1 && *s2 && (unsigned char)*s1 == (unsigned char)*s2))
-		return ((unsigned char)*s1 - (unsigned char)*s2);
-	return (ft_strncmp(s1 + 1, s2 + 1, n - 1));
+	if (alst && new1)
+	{
+		new1->next = *alst;
+		*alst = new1;
+	}
 }

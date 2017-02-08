@@ -1,22 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memmove2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
+/*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/04 22:28:45 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/30 15:45:28 by syusof           ###   ########.fr       */
+/*   Created: 2016/05/23 04:10:20 by syusof            #+#    #+#             */
+/*   Updated: 2016/11/18 18:32:09 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strncmp(const char *s1, const char *s2, size_t n)
+char	*ft_memmove2(char *src)
 {
-	if (n == 0)
-		return (0);
-	if (!(*s1 && *s2 && (unsigned char)*s1 == (unsigned char)*s2))
-		return ((unsigned char)*s1 - (unsigned char)*s2);
-	return (ft_strncmp(s1 + 1, s2 + 1, n - 1));
+	int		i;
+	int		n;
+	char	*temp;
+
+	n = ft_strlen(src);
+	temp = (char*)malloc(sizeof(char) * n + 1);
+	i = 0;
+	while (i <= n)
+	{
+		temp[i] = src[i];
+		i++;
+	}
+	return (temp);
 }
